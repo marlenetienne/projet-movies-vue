@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header msg="Movies"/>
+    <Gallery/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
+import Gallery from './components/Gallery.vue'
 
 export default {
   name: 'app',
+  props: {
+    msg: String
+  },
   components: {
-    HelloWorld
+    Header,
+    Gallery
   }
 }
 </script>
 
 <style lang="less">
+@import '~normalize.css';
+// @import './assets/styles/variables.less';
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color:#1e2426;
+  font-family:Verdana,Geneva,Tahoma,sans-serif;
+  color:#fff;
+  margin:0 auto;
+  height:100vh;
+  display:flex;
+  flex-direction:column
 }
 </style>
